@@ -577,6 +577,9 @@
 		B41E711A0DF84CA1B8742F6D /* CanaryPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149CD3C2195E4EF8928ED6A1 /* CanaryPlugin.swift */; };
 		9955C123AB7F4A40A50720CF /* CanaryPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149CD3C2195E4EF8928ED6A1 /* CanaryPlugin.swift */; };
 		3CDF1305CF9D40B5AA359371 /* CanaryPluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A86A9D4D2C54021880E39AD /* CanaryPluginTests.swift */; };
+		8ABF4F8C4C9E4C4E9C55EFF8 /* H20R2T2Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F6A553EEB94BF2AFA29337 /* H20R2T2Plugin.swift */; };
+		CC4ACE27855A4D44B4CD52CE /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = A5156275644D4D1EAFA0EF9F /* manifest.json */; };
+		0B504DD0C8EE45A9A3DEF037 /* TypeWhisperPluginSDK in Frameworks */ = {isa = PBXBuildFile; productRef = PP00000000000000000006 /* TypeWhisperPluginSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1218,6 +1221,9 @@
 		47400DA71F7147E6934EA081 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		149CD3C2195E4EF8928ED6A1 /* CanaryPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanaryPlugin.swift; sourceTree = "<group>"; };
 		7A86A9D4D2C54021880E39AD /* CanaryPluginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests/CanaryPluginTests.swift; sourceTree = "<group>"; };
+		D6F6A553EEB94BF2AFA29337 /* H20R2T2Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H20R2T2Plugin.swift; sourceTree = "<group>"; };
+		A5156275644D4D1EAFA0EF9F /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
+		5DE99C3DADED424C8CA37A32 /* H20R2T2Plugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = H20R2T2Plugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1698,6 +1704,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EFC31B6CFD7C4B918B0D6188 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B504DD0C8EE45A9A3DEF037 /* TypeWhisperPluginSDK in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -1734,6 +1748,7 @@
 				1C1000000000000000000020 /* TypeWhisperICloudBridge */,
 				CC00000000000000000013 /* typewhisper-cli */,
 				CC00000000000000000015 /* WebhookPlugin */,
+				150DEE531FFD4103AEF8FD7B /* H20R2T2Plugin */,
 				CC00000000000000000016 /* GroqPlugin */,
 				CC00000000000000000017 /* OpenAIPlugin */,
 				CC00000000000000000018 /* GeminiPlugin */,
@@ -2748,6 +2763,7 @@
 				DD00000000000000000099 /* TypeWhisper.app */,
 				1C1000000000000000000018 /* TypeWhisperICloudBridge.xpc */,
 				BB00000000000000000133 /* WebhookPlugin.bundle */,
+				5DE99C3DADED424C8CA37A32 /* H20R2T2Plugin.bundle */,
 				BB00000000000000000134 /* GroqPlugin.bundle */,
 				BB00000000000000000135 /* OpenAIPlugin.bundle */,
 				BB00000000000000000143 /* GeminiPlugin.bundle */,
@@ -2900,6 +2916,16 @@
 			);
 			name = CanaryPlugin;
 			path = TypeWhisperPluginSDK/Plugins/CanaryPlugin;
+			sourceTree = "<group>";
+		};
+		150DEE531FFD4103AEF8FD7B /* H20R2T2Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				D6F6A553EEB94BF2AFA29337 /* H20R2T2Plugin.swift */,
+				A5156275644D4D1EAFA0EF9F /* manifest.json */,
+			);
+			name = H20R2T2Plugin;
+			path = TypeWhisperPluginSDK/Plugins/H20R2T2Plugin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4067,6 +4093,26 @@
 			productReference = 9A5C56DC96AE4CD595EEF826 /* CanaryPlugin.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
+		0AA2427C7E1F451BBD2143D9 /* H20R2T2Plugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79B722272AB04BF99DE683B2 /* Build configuration list for PBXNativeTarget "H20R2T2Plugin" */;
+			buildPhases = (
+				BF1C0606664A40C48417710A /* Sources */,
+				EFC31B6CFD7C4B918B0D6188 /* Frameworks */,
+				2173B3283B7E477FB3E1784F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = H20R2T2Plugin;
+			packageProductDependencies = (
+				PP00000000000000000006 /* TypeWhisperPluginSDK */,
+			);
+			productName = H20R2T2Plugin;
+			productReference = 5DE99C3DADED424C8CA37A32 /* H20R2T2Plugin.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -4130,6 +4176,7 @@
 				1C1000000000000000000040 /* TypeWhisperICloudBridge */,
 				DD00000000000000000002 /* typewhisper-cli */,
 				DD00000000000000000003 /* WebhookPlugin */,
+				0AA2427C7E1F451BBD2143D9 /* H20R2T2Plugin */,
 				DD00000000000000000004 /* GroqPlugin */,
 				DD00000000000000000005 /* OpenAIPlugin */,
 				DD00000000000000000006 /* GeminiPlugin */,
@@ -4689,6 +4736,14 @@
 			files = (
 				90BCF178D8E84684B86B5B58 /* manifest.json in Resources */,
 				26E3913BE45D4A84AE22741A /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2173B3283B7E477FB3E1784F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC4ACE27855A4D44B4CD52CE /* manifest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5464,6 +5519,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41E711A0DF84CA1B8742F6D /* CanaryPlugin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF1C0606664A40C48417710A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ABF4F8C4C9E4C4E9C55EFF8 /* H20R2T2Plugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8397,6 +8460,54 @@
 			};
 			name = Debug;
 		};
+			66AE82BB7AFF49F5A667A345 /* Debug */ = {
+				isa = XCBuildConfiguration;
+				buildSettings = {
+					CODE_SIGN_STYLE = Automatic;
+					COMBINE_HIDPI_IMAGES = YES;
+					CURRENT_PROJECT_VERSION = 1;
+					DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.beeven.typewhisper.h20-r2t2";
+				PRODUCT_NAME = H20R2T2Plugin;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		B0E642592CC94F87B87BDB77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.beeven.typewhisper.h20-r2t2";
+				PRODUCT_NAME = H20R2T2Plugin;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -8918,6 +9029,15 @@
 			buildConfigurations = (
 				176D1BDC0A054422B9FE8568 /* Debug */,
 				A2F50F68FE784D2CACCF3F9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79B722272AB04BF99DE683B2 /* Build configuration list for PBXNativeTarget "H20R2T2Plugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66AE82BB7AFF49F5A667A345 /* Debug */,
+				B0E642592CC94F87B87BDB77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,0 +1,41 @@
+name: Build H20 R2T2 Plugin
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@ed7a3b1fda3918c0306d1b724322adc0b8cc0a90 # v1.7.0
+        with:
+          xcode-version: '26.6'
+      - name: Resolve dependencies
+        run: xcodebuild -resolvePackageDependencies -project TypeWhisper.xcodeproj
+      - name: Build unsigned plugin bundle
+        run: |
+          xcodebuild -project TypeWhisper.xcodeproj \
+            -target H20R2T2Plugin -configuration Release -sdk macosx \
+            SYMROOT="$RUNNER_TEMP/TypeWhisperBuild" \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY='-' \
+            build
+      - name: Check and package bundle
+        run: |
+          bundle="$RUNNER_TEMP/TypeWhisperBuild/Release/H20R2T2Plugin.bundle"
+          test -f "$bundle/Contents/MacOS/H20R2T2Plugin"
+          test -f "$bundle/Contents/Resources/manifest.json"
+          plutil -lint "$bundle/Contents/Info.plist"
+          ditto -c -k --keepParent "$bundle" "$RUNNER_TEMP/H20R2T2Plugin.zip"
+      - name: Upload plugin bundle
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: H20R2T2Plugin-bundle
+          path: ${{ runner.temp }}/H20R2T2Plugin.zip
+          if-no-files-found: error

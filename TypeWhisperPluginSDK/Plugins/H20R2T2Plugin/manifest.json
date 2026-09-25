@@ -1,0 +1,15 @@
+{
+  "id": "me.beeven.typewhisper.h20-r2t2",
+  "name": "H20 R2T2",
+  "version": "0.1.0",
+  "minHostVersion": "1.6.0",
+  "sdkCompatibilityVersion": "v1",
+  "minOSVersion": "14.0",
+  "supportedArchitectures": [
+    "arm64"
+  ],
+  "author": "Beeven",
+  "category": "transcription",
+  "principalClass": "H20R2T2Plugin",
+  "requiresAPIKey": true
+}
